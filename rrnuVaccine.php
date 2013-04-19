@@ -4,9 +4,11 @@
  * This simple script will read all file php recursivelly from directory and cleanup string defined by rr.nu
  * 
  * changelog: 
+ * v0.3 - forked by kokojie, changed the regex to match a more broad range of malware
  * v0.2 - verification by Regex, based on idea: http://misc.wordherders.net/wp/wordpress-fix_php.txt
  * v0.1 - single string verification
  * 
+ * @author kokojie <kokojie@gmail.com>
  * @author Walker de Alencar <walkeralencar@gmail.com>
  * @link {https://github.com/walkeralencar/rrnuVaccine}
  */
@@ -15,7 +17,7 @@ class rrnuVaccine {
     private $directory;
     private $counter;
     private $log = '';
-    private $pattern = '(\<\?php \/\*\*\/ eval\(base64_decode\("aWYoZnVuY3Rpb25fZXhpc3RzKCdvYl9zdGFydCcpJiYhaXNzZXQoJF9TRVJWRVJbJ21yX25vJ10pKX.*"\)\);\?\>)';
+    private $pattern = '%\<\?php.*eval\(.*\(base64_decode\(.*\)\)\);\?\>%';
 
     private function __construct() {
         
