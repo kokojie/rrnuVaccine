@@ -1,7 +1,8 @@
 <?php
 /**
  * Vaccine: Malware rr.nu
- * This simple script will read all file php recursivelly from directory and cleanup string defined by rr.nu
+ * This simple script will read all file php recursivelly from directory and cleanup most malware,
+ * especialy of the "rrnu" variety.
  * 
  * changelog: 
  * v0.3 - forked by kokojie, changed the regex to match a more broad range of malware
